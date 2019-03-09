@@ -12,11 +12,11 @@ class UrangeIter:
         self.start = 0 if len(args) == 1 else args[0]
         self.end = args[0] if len(args) == 1 else args[1]
         self.step = 1 if len(args) < 3 else args[2]
-        for i in [self.start, self.end, self.step]:
-            if not isinstance(i, int):
-                raise TypeError(f"{str(type(i).__name__)} object cannot be interpreted as an integer")
+        for parameter in [self.start, self.end, self.step]:
+            if not isinstance(parameter, int):
+                raise TypeError(f"{str(type(parameter).__name__)} object cannot be interpreted as an integer")
         if self.step == 0:
-            raise ValueError("urange() arg 3 must not be zero")
+            raise ValueError("urange() step argument must not be zero")
         self.stop = self.end + (self.start - self.end) % self.step
 
     def __iter__(self):

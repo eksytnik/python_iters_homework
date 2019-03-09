@@ -1,5 +1,6 @@
-import unittest
-from tests_homework.range_generator import urange
+import unittest, sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from urange_generator import urange
 
 
 class UserRangeTest(unittest.TestCase):

@@ -10,11 +10,11 @@ def urange(*args):
     current = 0 if len(args) == 1 else args[0]
     end = args[0] if len(args) == 1 else args[1]
     step = 1 if len(args) < 3 else args[2]
-    for i in [current, end, step]:
-        if not isinstance(i, int):
-            raise TypeError("'%s' object cannot be interpreted as an integer" % type(i).__name__)
+    for parameter in [current, end, step]:
+        if not isinstance(parameter, int):
+            raise TypeError(f"{str(type(parameter).__name__)} object cannot be interpreted as an integer")
     if step == 0:
-        raise ValueError("urange() arg 3 must not be zero")
+        raise ValueError("urange() step argument must not be zero")
     end += (current - end) % step
     if (current - end) // step < 0:
         while current != end:

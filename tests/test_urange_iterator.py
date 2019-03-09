@@ -1,5 +1,6 @@
-import unittest
-from tests_homework.range_iterator import UrangeIter
+import unittest, sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from urange_iterator import UrangeIter
 
 
 class UserRangeTest(unittest.TestCase):
